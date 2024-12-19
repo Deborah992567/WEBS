@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMINE ICT</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+      /* Navbar styles */
+      .navbar {
+        background-color: #D2B48C;
+      }
+
+      .navbar-brand span {
+        color: white;
+      }
+
+      /* Position navbar items to the right */
+      .navbar-nav {
+        margin-left: auto !important;
+      }
+
+      /* Style for close button */
+      .close-btn {
+        display: none;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+        background: none;
+        border: none;
+        z-index: 1001;
+      }
+
+      /* Mobile styles */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 250px;
+          height: 100vh;
+          background-color:#eae8e7;
+          transition: 0.3s ease-in-out;
+          padding: 60px 20px 20px;
+          z-index: 1000;
+        }
+
+        .navbar-collapse.show {
+          right: 0;
+        }
+
+        .close-btn {
+          display: block;
+        }
+
+        /* Position toggler to the right */
+        .navbar-toggler {
+          margin-left: auto;
+        }
+
+        .navbar-nav {
+          margin-top: 20px;
+        }
+
+        .nav-item {
+          margin: 10px 0;
+        }
+      }
+
+      /* Overlay for mobile menu */
+      .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+
+      .menu-overlay.show {
+        display: block;
+      }
+      #navword{
+        font-size: 15px;
+        
+      }
+      header {
+        background: linear-gradient(135deg, #FF8C00 0%, #D2B48C 50%, #F5DEB3 100%); /* Orange to Burlywood to Wheat */
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for text */
+      }
+
+      header p {
+        font-size: 1.5em;
+        color: #FDF5E6; /* OldLace for a softer white */
+      }
+
+      /* Services Section */
+      #services {
+        padding: 40px;
+        margin: 40px auto;
+        max-width: 1000px;
+        background-color: #FFF8E7; /* Light Wheat */
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .service-item {
+        margin-bottom: 20px;
+        padding: 20px;
+        border-left: 4px solid #FF8C00; /* Orange accent */
+        background-color: #FAF3E0; /* Warm light tone */
+        transition: all 0.3s ease;
+      }
+
+      .service-item:hover {
+        transform: translateX(10px);
+        background-color: #FFDAB9; /* PeachPuff */
+        box-shadow: 0 4px 15px rgba(255, 140, 0, 0.2);
+      }
+
+      /* Clients Section */
+      .clients-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .client-card {
+        position: relative;
+        background: #FAF0E6; /* Linen for light warmth */
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .client-card img {
+        width:60%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .client-info {
+        padding: 20px;
+        background: rgba(255, 140, 0, 0.9); /* Orange overlay for info */
+        color: white;
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        transition: all 0.3s ease;
+      }
+
+      .client-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(255, 140, 0, 0.2);
+      }
+
+      .client-card:hover .client-info {
+        bottom: 0;
+      }
+
+      h2 {
+        color: #FF8C00; /* Orange for headers */
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 2.5em;
+      }
+
+      /* Animation for smooth fade-ins */
+      [data-aos] {
+        opacity: 0;
+        transform: translateY(20px);
+        transition-property: opacity, transform;
+        transition-duration: 0.6s;
+        transition-timing-function: ease-out;
+      }
+
+      [data-aos="fade-up"] {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Mobile View Adjustments */
+      @media (max-width: 768px) {
+        .client-card img {
+          height: 100px; /* Reduce image size for mobile */
+        }
+
+        .client-card {
+          margin: 10px; /* Adjust margin for better spacing */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #D2B48C;">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#" id="navword">
+              Domine <span>Computer</span> ICT.
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                  data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                  aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="about.html">About-us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="service.html">Services</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="training.html">Training-Programs</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="contact.html">Contact-us</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+  <header>
+    <h1>DCCL Consulting Services</h1>
+    <p>Empowering organizations with innovative and customized ICT solutions.</p>
+  </header>
+
+  <section id="services">
+    <h2>What We Do</h2>
+    <div class="service-item">
+      <h3>ICT Strategy and Solutions Development</h3>
+      <p>Crafting digital strategies tailored to enhance operational efficiency and developing web and mobile-based solutions.</p>
+    </div>
+    <div class="service-item">
+      <h3>Project and Resource Management</h3>
+      <p>Leading high-profile projects, including baseline surveys, KPI development, and resource planning for governments and NGOs.</p>
+    </div>
+    <div class="service-item">
+      <h3>Data and Analytics Consulting</h3>
+      <p>Designing and implementing data capture tools and providing actionable insights through advanced data analysis.</p>
+    </div>
+    <div class="service-item">
+      <h3>Capacity Building</h3>
+      <p>Offering training and workshops in digital literacy, cybersecurity, IoT, and AI, empowering professionals and organizations.</p>
+    </div>
+  </section>
+
+  <section id="clients">
+    <h2>Our Valued Partners</h2>
+    <div class="clients-grid">
+      <div class="client-card">
+        <img src="images/download (9).jpeg" alt="UNICEF">
+        <div class="client-info">
+          <h3>United Nations Children's Fund</h3>
+          <p>Leading geoportal systems and digital transformation initiatives</p>
+        </div>
+      </div>
+      <div class="client-card">
+        <img src="images/download (10).jpeg" alt="UNFPA">
+        <div class="client-info">
+          <h3>UN Population Fund</h3>
+          <p>Implementing reproductive health surveys and data management systems</p>
+        </div>
+      </div>
+      <div class="client-card">
+        <img src="images/OIP (1).jpeg" alt="IOM">
+        <div class="client-info">
+          <h3>International Organization for Migration</h3>
+          <p>Developing migration tracking and management solutions</p>
+        </div>
+      </div>
+      <div class="client-card">
+        <img src="images/download (11).jpeg" alt="Kaduna State">
+        <div class="client-info">
+          <h3>Kaduna State Government</h3>
+          <p>Deploying e-governance platforms and digital infrastructure</p>
+        </div>
+      </div>
+      <div class="client-card">
+        <img src="images/download (12).jpeg" alt="Lagos State">
+        <div class="client-info">
+          <h3>Lagos State Government</h3>
+          <p>Implementing smart city initiatives and digital services</p>
+        </div>
+      </div>
+     
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="contact.js"></script>
+  
+  <script>
+      AOS.init({
+          duration: 800, // Animation duration in milliseconds
+          easing: 'ease-in-out', // Animation easing
+          once: true // Whether animation happens only once
+      });
+  </script>
+  
+
+  <script>
+    function closeMenu() {
+      document.getElementById('navbarNav').classList.remove('show');
+      document.querySelector('.menu-overlay').classList.remove('show');
+    }
+
+    // Show overlay when menu opens
+    document.querySelector('.navbar-toggler').addEventListener('click', function() {
+      document.querySelector('.menu-overlay').classList.add('show');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('navbarNav');
+      const toggler = document.querySelector('.navbar-toggler');
+      if (!menu.contains(event.target) && !toggler.contains(event.target)) {
+        closeMenu();
+      }
+    });
+  </script>
+</body>
+</html>

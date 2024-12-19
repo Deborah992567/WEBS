@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOMINE ICT</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <link rel="stylesheet" href="index.css">
+        <style>
+            /* Custom Styles */
+            #contact-image {
+                width: 100%; /* Ensure full width */
+                height: auto; /* Maintain the original aspect ratio */
+                border-radius: 10px; /* Keep the border radius */
+                object-fit: cover; /* Ensure image scales correctly */
+                position: relative; /* Position relative for the following section */
+            }
+
+            #start-project {
+                background-color: grey;
+                color: white;
+                padding: 30px;
+                position: relative; /* Position section above the image */
+                top: -12%; /* Adjust this value to move the section */
+                z-index: 1; /* Ensure the section stays on top */
+                width: 85%; /* Full width for responsiveness */
+                height: 700px; /* Increased height */
+                border-radius: 15px; /* Border radius for rounded corners */
+            }
+
+            #contact-form {
+                background-color: white;
+                border-radius: 10px;
+                padding: 40px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-control {
+                border-radius: 5px;
+                box-shadow: none;
+            }
+
+            h2, .contact-info {
+                font-weight: 600;
+            }
+
+            .contact-info {
+                font-size: 16px;
+                color: #333;
+            }
+
+            .contact-info span {
+                font-weight: 700;
+            }
+
+            @media (min-width: 992px) {
+                /* Layout for larger screens */
+                .contact-col {
+                    width: 50%;
+                }
+
+                .project-col {
+                    width: 50%;
+                }
+            }
+
+            @media (max-width: 991px) {
+                /* Layout for smaller screens */
+                .contact-col,
+                .project-col {
+                    width: 100%;
+                    display: block; /* Stack vertically */
+                    margin-bottom: 20px; /* Add spacing between sections */
+                }
+
+                section.d-flex {
+                    flex-direction: column; /* Stack flex items vertically */
+                    align-items: center; /* Center align the content */
+                }
+            }
+
+            #project {
+                font-size: 75px;
+                color: white;
+            }
+
+            .contact-info {
+                font-size: 20px;
+            }
+
+            #navword {
+                font-size: 15px;
+            }
+            .navbar {
+        background-color: #D2B48C;
+      }
+
+      .navbar-brand span {
+        color: white;
+      }
+
+      /* Position navbar items to the right */
+      .navbar-nav {
+        margin-left: auto !important;
+      }
+
+      /* Style for close button */
+      .close-btn {
+        display: none;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+        background: none;
+        border: none;
+        z-index: 1001;
+      }
+
+      /* Mobile styles */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 250px;
+          height: 100vh;
+          background-color: #dfd8d0;
+          transition: 0.3s ease-in-out;
+          padding: 60px 20px 20px;
+          z-index: 1000;
+        }
+
+        .navbar-collapse.show {
+          right: 0;
+        }
+
+        .close-btn {
+          display: block;
+        }
+
+        /* Position toggler to the right */
+        .navbar-toggler {
+          margin-left: auto;
+        }
+
+        .navbar-nav {
+          margin-top: 20px;
+        }
+
+        .nav-item {
+          margin: 10px 0;
+        }
+      }
+
+      /* Overlay for mobile menu */
+      .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+
+      .menu-overlay.show {
+        display: block;
+      }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #D2B48C;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" id="navword">
+                    Domine <span>Computer</span> Communication Inc.
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About-us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="apartment.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booking.html">Training-Programs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact-us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Image Section -->
+        <div>
+            <img src="images/contact-us-image.jpg" alt="Company Image" class="img-fluid" id="contact-image">
+        </div>
+
+        <!-- Contact Section -->
+        <section class="d-flex justify-content-between my-5">
+            <!-- Start a Project Section (left) -->
+            <div class="col-lg-5 project-col">
+                <div id="start-project">
+                    <h2 id="project">Start a Project with Us?</h2>
+                   
+                     <!-- Contact Information -->
+                    <div class="contact-info my-4 text-center">
+                        <p>Or reach us via:</p>
+                        <p><span>Email:</span> info@dOMINE ICT.com</p>
+                        <p><span>Phone:</span> +123 456 7890</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Us Section (right) -->
+            <div class="col-lg-5 contact-col">
+                <div id="contact-form">
+                    <h2>Contact Us</h2>
+                    <form action="https://formspree.io/f/mpwzgzwn" method="POST">
+                        <!-- Name Field -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name:</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Your Email:</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+
+                        <!-- Phone Number Field -->
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Your Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. +1234567890" required>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message:</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Please leave a message" required></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scripts -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="contact.js"></script>
+
+        <script>
+            AOS.init({
+                duration: 800, // Animation duration in milliseconds
+                easing: 'ease-in-out', // Animation easing
+                once: true // Whether animation happens only once
+            });
+        </script>
+          <script>
+            function closeMenu() {
+              document.getElementById('navbarNav').classList.remove('show');
+              document.querySelector('.menu-overlay').classList.remove('show');
+            }
+      
+            // Show overlay when menu opens
+            document.querySelector('.navbar-toggler').addEventListener('click', function() {
+              document.querySelector('.menu-overlay').classList.add('show');
+            });
+      
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+              const menu = document.getElementById('navbarNav');
+              const toggler = document.querySelector('.navbar-toggler');
+              if (!menu.contains(event.target) && !toggler.contains(event.target)) {
+                closeMenu();
+              }
+            });
+          </script>
+    </body>
+</html>

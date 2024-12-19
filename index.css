@@ -1,0 +1,320 @@
+hr {
+    width: 20%;
+    border: 3px solid rgb(55, 49, 4); /* Border color */
+}
+
+body {
+    background-color: white; /* Light beige background */
+    color: #784e4e; /* Dark brown text */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #ffffff; /* White navbar background */
+    height: 80px; /* Increased navbar height */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    width: 100%; /* Ensure navbar spans the full width */
+    z-index: 1000; /* Keep it above other elements */
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* Bigger font size */
+    font-weight: bold; /* Bold text */
+    color: #ff7f00; /* Orange color */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
+.navbar-brand span {
+    color: #333333; /* Different color for "Computer" */
+    font-style: italic; /* Optional styling for emphasis */
+}
+
+/* Navbar Links */
+.nav-link {
+    color: #333333; /* Default text color */
+    font-size: 1rem; /* Adjusted font size */
+    font-weight: 500; /* Medium font weight */
+    padding: 10px 20px; /* Add spacing between links */
+    position: relative; /* For underline */
+    transition: color 0.3s ease;
+    text-align: center; /* Center align links */
+}
+
+/* Active and Hover States */
+.nav-link:hover,
+.nav-link.active {
+    color: #ff7f00; /* Orange text on hover */
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Align underline to bottom */
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ff7f00; /* Orange underline */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%; /* Full-width underline on hover */
+}
+
+/* Navbar Toggler (Visible Only on Mobile) */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    display: none; /* Hidden on desktop */
+}
+
+/* Show Toggler Only on Small Screens */
+@media (max-width: 991px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 1050;
+        padding: 20px;
+        display: none; /* Initially hidden */
+        overflow-y: auto;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+        transform: translateX(0);
+    }
+
+    .close-btn {
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: #000;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+}
+
+/* Navbar Nav */
+.navbar-nav {
+    align-items: center; /* Vertically align links */
+}
+
+h2, h3 {
+    color: rgb(127, 113, 113); /* Dark brown headings */
+}
+
+.btn-primary {
+    background-color: #4b2e2e; /* Dark brown button */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #6d4c41; /* Lighter brown hover effect */
+}
+
+#us {
+    transition: transform 0.3s ease-in-out; /* Smooth animation when hovered */
+}
+
+#us:hover {
+    transform: translateY(10px); /* Moves the section down by 10px */
+}
+
+#service {
+    transition: transform 0.3s ease-in-out;
+}
+
+#service:hover {
+    transform: translateY(10px); /* Moves the section down by 10px */
+}
+
+#abt {
+    width: 16%;
+    border: 3px solid rgb(55, 49, 4);
+}
+
+.wavy-badge {
+    display: inline-block;
+    background: yellow;
+    padding: 10px;
+    border-radius: 50%;
+    color: #000;
+}
+
+.wavy-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.wavy-card {
+    position: relative;
+    background-color: burlywood; /* Dark background color */
+    color: beige; /* Text color */
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    margin: 20px;
+}
+
+.wavy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, #987654, transparent);
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+    z-index: 1;
+}
+
+/* Typing animation for the placeholder */
+.blinking-cursor::after {
+    content: '|';
+    color: black;
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Card Section */
+.card {
+    width: 18rem; /* Square shape */
+    height: 18rem; /* Fixed height */
+    border: 6px solid; /* Orange border */
+    background-color: #ffffff; /* White background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    position: relative; /* For image positioning */
+    padding: 10px; /* Tighter padding */
+    text-align: center; /* Center text */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    position: absolute;
+    top: 10px; /* Top alignment */
+    left: 10px; /* Left alignment */
+    width: 50px; /* Small size */
+    height: 50px; /* Ensure a perfect square */
+    border-radius: 50%; /* Curved image (circle) */
+    object-fit: cover; /* Maintain aspect ratio */
+    filter: grayscale(100%); /* Black and white initially */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover img {
+    filter: grayscale(0%); /* Restore original color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.card:hover {
+    border-color: orange; /* Border color remains orange */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.card-body {
+    margin-top: 60px; /* Space below the image */
+    padding: 10px; /* Space around text */
+    flex: 1; /* Center remaining space */
+}
+
+/* Dark Overlay Styling */
+#dark-overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1040; /* Ensure it's above other content */
+}
+/* Navbar */
+.navbar {
+    background-color: #D2B48C; /* Match your design */
+    padding: 10px 15px; /* Add padding for better spacing */
+    z-index: 1030; /* Ensure it stays above other elements */
+  }
+  
+  /* Navbar Brand */
+  .navbar-brand {
+    font-size: 19px;
+    color: orange; /* Brand color */
+    margin-right: auto; /* Align brand to the left */
+  }
+  
+  .navbar-brand span {
+    color: white; /* Different color for span */
+  }
+  
+  /* Toggler Button Alignment */
+  .navbar-toggler {
+    border: none; /* Remove border for a clean look */
+  }
+  
+  /* Sticky Navbar */
+  .sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+  }
+  
+  /* Mobile Menu Adjustments */
+  @media (max-width: 991.98px) {
+    .navbar-toggler {
+      margin-left: auto; /* Push toggler to the right */
+    }
+  
+    .navbar-collapse {
+      position: fixed;
+      top: 0;
+      right: -100%; /* Hide menu initially */
+      width: 250px;
+      height: 100vh;
+      background-color: #eae8e7; /* Mobile menu background */
+      transition: 0.3s ease-in-out;
+      padding: 60px 20px 20px;
+      z-index: 1000;
+    }
+  
+    .navbar-collapse.show {
+      right: 0; /* Show the menu */
+    }
+  
+    .navbar-nav {
+      margin-top: 20px; /* Add spacing between items */
+    }
+  
+    .nav-item {
+      margin: 10px 0; /* Space between nav items */
+    }
+  }
+  

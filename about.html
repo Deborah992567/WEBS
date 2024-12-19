@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMINE ICT</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+      /* Navbar styles */
+      .navbar {
+        background-color: #D2B48C;
+      }
+
+      .navbar-brand span {
+        color: white;
+      }
+
+      .navbar-nav {
+        margin-left: auto !important;
+      }
+
+      /* Mobile styles */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 250px;
+          height: 100vh;
+          background-color: #eae8e7;
+          transition: 0.3s ease-in-out;
+          padding: 60px 20px 20px;
+          z-index: 1000;
+        }
+
+        .navbar-collapse.show {
+          right: 0;
+        }
+
+        .navbar-toggler {
+          margin-left: auto;
+        }
+
+        .navbar-nav {
+          margin-top: 20px;
+        }
+
+        .nav-item {
+          margin: 10px 0;
+        }
+      }
+
+      /* Section Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+/* Header Section Styles */
+/* Header Section Styles */
+.header {
+    background: linear-gradient(135deg, #D2B48C, #F5DEB3); /* Burlywood and Wheat tones */
+    color: #4B3621; /* A deep brown for contrast */
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px; /* Rounded square */
+    max-width: 80%; /* Centered box width */
+    margin: 30px auto; /* Center alignment */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    animation: fadeInScale 1s ease-out; /* Add animation */
+}
+
+/* Keyframes for fade-in and scale-up */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); /* Start smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* End at normal size */
+    }
+}
+
+/* Dynamic Greeting Styles */
+.header h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #8B4513; /* SaddleBrown accent for greeting */
+}
+
+
+/* Dynamic Greeting Styles */
+.header h3 {
+    text-shadow: 1px 1px 5px rgba(139, 69, 19, 0.5);/* Light golden accent for greeting */
+}
+
+
+      h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      p {
+        margin: 10px 0;
+      }
+
+      section {
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 800px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        animation: slideIn 1.5s ease-in-out;
+      }
+
+      h2 {
+        color: #D2B48C;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      ul li {
+        margin: 10px 0;
+      }
+
+      /* Footer Styles */
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #D2B48C;
+        color: white;
+        margin-top: 20px;
+        animation: fadeInUp 1.5s ease-in-out;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" id="navword">
+          Domine <span>Computer</span> Communication Inc.
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About-us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="training.html">Training-Programs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact-us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="header">
+        <h1>Welcome to DOMINE ICT</h1>
+        <p>Your Trusted ICT Solutions Partner</p>
+        <h3 id="dynamic-greeting"></h3> <!-- Placeholder for dynamic greeting -->
+    </header>
+    
+
+    <section id="about-us" data-aos="fade-up">
+      <h2>Who We Are</h2>
+      <p>
+        At Domine ICT, we are pioneers in ICT consulting, training, and innovative
+        software solutions. Since 1996, we have been redefining how businesses
+        leverage technology, empowering organizations through tailored services
+        and cutting-edge solutions.
+      </p>
+    </section>
+
+    <section id="what-we-do" data-aos="fade-right">
+      <h2>What We Do</h2>
+      <ul>
+        <li><strong>Software Development:</strong> Web, mobile, and enterprise solutions.</li>
+        <li><strong>Data Analytics:</strong> Turning raw data into actionable insights.</li>
+        <li><strong>ICT Training:</strong> Cybersecurity, programming, and digital marketing.</li>
+        <li><strong>Consulting:</strong> Supporting with project management and infrastructure.</li>
+      </ul>
+    </section>
+
+    <section id="beliefs" data-aos="fade-left">
+      <h2>What We Believe In</h2>
+      <ul>
+        <li><strong>Excellence:</strong> Delivering world-class solutions.</li>
+        <li><strong>Innovation:</strong> Harnessing technology to solve modern challenges.</li>
+        <li><strong>Collaboration:</strong> Partnering with clients to bring ideas to life.</li>
+      </ul>
+    </section>
+
+  
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      // Initialize AOS library
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Add a dynamic greeting based on time of day
+      const headerGreeting = document.getElementById('dynamic-greeting');
+const currentTime = new Date();
+const currentHour = currentTime.getHours();
+
+let greetingMessage;
+if (currentHour < 12) {
+    greetingMessage = "Good Morning!";
+} else if (currentHour < 18) {
+    greetingMessage = "Good Afternoon!";
+} else {
+    greetingMessage = "Good Evening!";
+}
+
+headerGreeting.textContent = greetingMessage;
+    </script>
+  </body>
+</html>
